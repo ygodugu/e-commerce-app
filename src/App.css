@@ -493,13 +493,13 @@ header nav ul.navbar-nav .nav-item .nav-link {
 }
 
 .shipping-section .btn-primary {
-  background-color: #007bff;
-  border-color: #007bff;
+  background-color: #f0c14b;
+  border-color: #d1a524;
 }
 
 .shipping-section .btn-primary:hover {
-  background-color: #0056b3;
-  border-color: #0056b3;
+  background-color: #f0c14b;
+  border-color: #d1a524;
 }
 
 @media (max-width: 992px) {

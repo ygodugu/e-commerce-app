@@ -15,20 +15,15 @@ const Login = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Fetch user credentials from local storage
         const storedUser = JSON.parse(localStorage.getItem('user'));
 
-        // Check if stored credentials match the entered ones
         if (storedUser && storedUser.email === email && storedUser.password === password) {
-            // Navigate to home page on successful login
             toast.success('Login successful!');
-            // Navigate to home page after a short delay
             setTimeout(() => {
                 navigate('/');
-            }, 1000); // Adjust delay as needed
+            }, 1000);
 
         } else {
-            // Show login failed message
             toast.error('Login failed. Please check your credentials.');
         }
     };

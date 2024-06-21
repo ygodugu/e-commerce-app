@@ -45,10 +45,8 @@ const Register = () => {
         e.preventDefault();
         const validationErrors = validate();
         if (Object.keys(validationErrors).length === 0) {
-            // Save data to local storage
             localStorage.setItem('user', JSON.stringify(form));
             toast.success('Registration successful!');
-            // Redirect to login page after a short delay
             setTimeout(() => navigate('/Login'), 2000);
         } else {
             setErrors(validationErrors);

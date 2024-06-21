@@ -12,19 +12,16 @@ const Navbar = () => {
     const [cartItemCount, setCartItemCount] = useState(0);
 
     useEffect(() => {
-        // Check if user data exists in localStorage
         const storedUser = JSON.parse(localStorage.getItem('user'));
         if (storedUser) {
             setUser(storedUser);
         }
 
-        // Initialize offcanvas menu for smaller screens
         const offcanvasElement = document.getElementById('offcanvasNavbar');
         if (offcanvasElement) {
             const offcanvasInstance = new Offcanvas(offcanvasElement);
             setOffcanvas(offcanvasInstance);
         }
-
     }, []);
 
 
@@ -35,7 +32,6 @@ const Navbar = () => {
         navigate('/Login');
     };
 
-
     const handleLinkClick = () => {
         if (offcanvas) {
             offcanvas.hide();
@@ -45,8 +41,6 @@ const Navbar = () => {
     const getNavLinkClass = (path) => {
         return location.pathname === path ? 'nav-link active' : 'nav-link';
     };
-
-
 
     return (
         <div>

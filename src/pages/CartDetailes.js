@@ -5,26 +5,23 @@ import logo from "../assets/E-shop 1.png"
 const CartDetails = () => {
     const [cartItems, setCartItems] = useState([]);
 
-    // Load cart items from local storage on component mount
     useEffect(() => {
         const storedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
         setCartItems(storedCartItems);
     }, []);
 
-    // Function to remove item from cart and update local storage
+    
     const removeItem = (index) => {
         const updatedCartItems = [...cartItems];
         updatedCartItems.splice(index, 1);
         setCartItems(updatedCartItems);
-        localStorage.setItem('cartItems', JSON.stringify(updatedCartItems)); // Update local storage
+        localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
     };
 
-    // Calculate total price of all items in cart
     const calculateTotal = () => {
         return cartItems.reduce((total, item) => total + item.price, 0).toFixed(2);
     };
 
-    // Render cart items or message if cart is empty
     const renderCartItems = () => {
         if (cartItems.length === 0) {
             return (

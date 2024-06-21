@@ -8,9 +8,8 @@ const CategoriesPage = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
 
-    const [user, setUser] = useState(null); // State to track user information
+    const [user, setUser] = useState(null);
 
-    // Check user login status on component mount
     useEffect(() => {
         const loggedInUser = JSON.parse(localStorage.getItem('user'));
         if (loggedInUser) {
@@ -18,8 +17,6 @@ const CategoriesPage = () => {
         }
     }, []);
 
-
-    // Fetch products whenever a category is selected
     useEffect(() => {
         if (selectedCategory) {
             setLoading(true);
@@ -51,7 +48,6 @@ const CategoriesPage = () => {
         );
     };
 
-
     const handleAddToCart = (product) => {
         if (user) {
             const existingCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
@@ -82,7 +78,6 @@ const CategoriesPage = () => {
                         women's clothing
                     </button>
                 </div>
-
             </div>
 
             <div className="products container mt-4 mb-5">
